@@ -26,9 +26,9 @@ class NotesTableViewController: UITableViewController {
         // Here we pass the note they tapped on between the view controllers
         if segue.identifier == "NoteDetailPush" {
             // Get the controller we are going to
-            var noteDetail = segue.destinationViewController as NoteDetailViewController
+            let noteDetail = segue.destinationViewController as! NoteDetailViewController
             // Lookup the data we want to pass
-            var theCell = sender as NoteDetailTableViewCell
+            let theCell = sender as! NoteDetailTableViewCell
             // Pass the data forward
             noteDetail.theNote = theCell.theNote
         }
@@ -39,21 +39,21 @@ class NotesTableViewController: UITableViewController {
         // We come here from an exit segue when they hit save on the detail screen
         
         // Get the controller we are coming from
-        var noteDetail = segue.sourceViewController as NoteDetailViewController
+        let noteDetail = segue.sourceViewController as! NoteDetailViewController
         
         // If there is a row selected....
-        if let indexPath = tableView.indexPathForSelectedRow() {
+        if let indexPath = tableView.indexPathForSelectedRow {
             // Update note in our store
-            NoteStore.sharedNoteStore.updateNote(theNote: noteDetail.theNote)
+            NoteStore.sharedNoteStore.updateNote(noteDetail.theNote)
             
             // The user was in edit mode
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         } else {
             // Otherwise, add a new record
-            NoteStore.sharedNoteStore.createNote(theNote: noteDetail.theNote)
+            NoteStore.sharedNoteStore.createNote(noteDetail.theNote)
             
             // Get an index to insert the row at
-            var indexPath = NSIndexPath(forRow: NoteStore.sharedNoteStore.count()-1, inSection: 0)
+            let indexPath = NSIndexPath(forRow: NoteStore.sharedNoteStore.count()-1, inSection: 0)
             
             // Update tableview
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -70,11 +70,11 @@ class NotesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Fetch a reusable cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("NoteDetailTableViewCell", forIndexPath: indexPath) as NoteDetailTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("NoteDetailTableViewCell", forIndexPath: indexPath) as! NoteDetailTableViewCell
         
         // Fetch the note
-        var rowNumber = indexPath.row
-        var theNote = NoteStore.sharedNoteStore.getNote(rowNumber)
+        let rowNumber = indexPath.row
+        let theNote = NoteStore.sharedNoteStore.getNote(rowNumber)
         
         // Configure the cell
         cell.setupCell(theNote)

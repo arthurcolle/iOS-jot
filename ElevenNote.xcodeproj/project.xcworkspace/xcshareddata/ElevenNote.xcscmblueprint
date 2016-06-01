@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "786457A44877E103B4469F6BA264233E19639A92",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "786457A44877E103B4469F6BA264233E19639A92" : 0,
+    "510A1544977B93F950DAB6550E83A8A6D748D411" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C278B3B7-CE8C-4321-989C-F630C69C2C9B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "786457A44877E103B4469F6BA264233E19639A92" : "ElevenNote\/",
+    "510A1544977B93F950DAB6550E83A8A6D748D411" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ElevenNote",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ElevenNote.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/arthurcolle\/mmm.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "510A1544977B93F950DAB6550E83A8A6D748D411"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tkunstek\/ElevenNote",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "786457A44877E103B4469F6BA264233E19639A92"
+    }
+  ]
+}

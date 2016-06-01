@@ -31,7 +31,7 @@ class NoteDetailViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Whenever we leave the screen, update our note model
-        theNote.title = self.noteTitleLabel.text
+        theNote.title = self.noteTitleLabel.text!
         theNote.text = self.noteTextView.text
     }
     

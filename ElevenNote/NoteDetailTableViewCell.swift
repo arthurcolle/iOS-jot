@@ -25,7 +25,7 @@ class NoteDetailTableViewCell : UITableViewCell {
         // Update the cell
         noteTitleLabel.text = theNote.title
         noteTextLabel.text = theNote.text
-        noteDateLabel.text = theNote.shortDate
+        noteDateLabel.text = theNote.shortDate as String
     }
     
 }

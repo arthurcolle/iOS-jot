@@ -40,7 +40,7 @@ class NoteStore {
     }
     
     // Update
-    func updateNote(#theNote:Note) {
+    func updateNote(theNote: Note) {
         // Notes passed by reference, no update code needed
     }
     
@@ -51,7 +51,7 @@ class NoteStore {
     
     func deleteNote(withNote:Note) {
         
-        for (i, note) in enumerate(notes) {
+        for (i, note) in notes.enumerate() {
             if note === withNote {
                 notes.removeAtIndex(i)
                 return
@@ -71,7 +71,7 @@ class NoteStore {
     // 1: Find the file & directory we want to save to...
     func archiveFilePath() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDirectory = paths.first as NSString
+        let documentsDirectory = paths.first! as NSString
         let path = documentsDirectory.stringByAppendingPathComponent("NoteStore.plist")
         
         return path
@@ -89,7 +89,7 @@ class NoteStore {
         let fileManager = NSFileManager.defaultManager()
         
         if fileManager.fileExistsAtPath(filePath) {
-            notes = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as [Note]
+            notes = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as! [Note]
         } else {
             notes = [Note]()
         }
